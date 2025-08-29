@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Eye, MapPin, Phone, Mail, Building, Clock, TrendingUp, AlertCircle, Calendar } from 'lucide-react';
 import { Customer } from '../types';
-import apiService from '../services/api';
+import { mockCustomers } from '../mockdata/mockdata';
 
 interface CustomerModalProps {
   customer: Customer | null;
@@ -183,15 +183,10 @@ const Customers: React.FC = () => {
   const fetchCustomers = async () => {
     try {
       setLoading(true);
-      const response = await apiService.getCustomers();
-      
-      if (response.error) {
-        setError(response.error);
-      } else if (response.data) {
-        setCustomers(response.data);
-      }
+      // Use mock data instead of API call
+      setCustomers(mockCustomers);
     } catch (err) {
-      setError('Failed to fetch customers');
+      setError('Failed to load customers');
     } finally {
       setLoading(false);
     }

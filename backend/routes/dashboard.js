@@ -1,13 +1,4 @@
 const express = require('express');
-<<<<<<< HEAD
-const router = express.Router();
-
-router.get('/', (req, res) => {
-  res.json({ message: 'Dashboard routes coming soon' });
-});
-
-module.exports = router;
-=======
 const moment = require('moment');
 const { protect, ensureDataIsolation } = require('../middlewares/auth');
 const Machine = require('../models/Machine');
@@ -229,4 +220,3 @@ router.get('/revenue-chart', protect, ensureDataIsolation, async (req, res) => {
 });
 
 module.exports = router;
->>>>>>> 09c67800c98a81dd42abd5c0d6ed43ce4c9589b9

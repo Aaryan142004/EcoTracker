@@ -1,39 +1,9 @@
 const mongoose = require('mongoose');
-<<<<<<< HEAD
-=======
 const bcrypt = require('bcryptjs');
->>>>>>> 09c67800c98a81dd42abd5c0d6ed43ce4c9589b9
 
 const dealerSchema = new mongoose.Schema({
   name: {
     type: String,
-<<<<<<< HEAD
-    required: true,
-    trim: true
-  },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-    trim: true,
-    lowercase: true
-  },
-  phone: {
-    type: String,
-    required: true,
-    trim: true
-  },
-  businessType: {
-    type: String,
-    required: true,
-    trim: true
-  },
-  address: {
-    type: String,
-    required: true,
-    trim: true
-  },
-=======
     required: [true, 'Dealer name is required'],
     trim: true,
     maxlength: [100, 'Name cannot exceed 100 characters']
@@ -92,7 +62,6 @@ const dealerSchema = new mongoose.Schema({
     language: { type: String, default: 'en' }
   },
   lastLogin: Date,
->>>>>>> 09c67800c98a81dd42abd5c0d6ed43ce4c9589b9
   createdAt: {
     type: Date,
     default: Date.now
@@ -101,9 +70,6 @@ const dealerSchema = new mongoose.Schema({
   timestamps: true
 });
 
-<<<<<<< HEAD
-module.exports = mongoose.model('Dealer', dealerSchema);
-=======
 // Hash password before saving
 dealerSchema.pre('save', async function(next) {
   if (!this.isModified('password')) return next();
@@ -128,4 +94,3 @@ dealerSchema.methods.getDealerId = function() {
 };
 
 module.exports = mongoose.model('Dealer', dealerSchema);
->>>>>>> 09c67800c98a81dd42abd5c0d6ed43ce4c9589b9

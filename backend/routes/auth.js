@@ -1,13 +1,4 @@
 const express = require('express');
-<<<<<<< HEAD
-const router = express.Router();
-
-router.get('/', (req, res) => {
-  res.json({ message: 'Auth routes coming soon' });
-});
-
-module.exports = router;
-=======
 const jwt = require('jsonwebtoken');
 const Dealer = require('../models/Dealer');
 const { protect } = require('../middlewares/auth');
@@ -185,4 +176,3 @@ router.post('/logout', protect, (req, res) => {
 });
 
 module.exports = router;
->>>>>>> 09c67800c98a81dd42abd5c0d6ed43ce4c9589b9

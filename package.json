@@ -1,10 +1,4 @@
 {
-<<<<<<< HEAD
-  "dependencies": {
-    "@types/leaflet": "^1.9.20",
-    "leaflet": "^1.9.4",
-    "react-leaflet": "^5.0.0"
-=======
   "name": "ecotrack-mern",
   "version": "1.0.0",
   "description": "Equipment rental management system",
@@ -17,6 +11,5 @@
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
->>>>>>> 09c67800c98a81dd42abd5c0d6ed43ce4c9589b9
   }
 }
